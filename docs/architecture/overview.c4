@@ -1,0 +1,17 @@
+workspace "My App" {
+  model {
+    user = person "Пользователь"
+    app = softwareSystem "Моё приложение"
+    db = softwareSystem "База данных"
+
+    user -> app "Использует"
+    app -> db "Хранит данные в"
+  }
+
+  views {
+    systemContext(app) {
+      title "Контекст системы"
+      description "Показывает систему и её окружение"
+    }
+  }
+}
